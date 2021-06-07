@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "readline-sync": "^1.4.10"
   },
-  "scripts": {
-  }
+  "scripts": {}
 }

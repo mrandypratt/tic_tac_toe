@@ -1,19 +1,18 @@
-let functions = require('./functions.js');
+import { prompt } from './functions.js';
 let readline = require('readline-sync');
 
 //Create Board
-const BOARD = [[],[],[]];
+const BOARD = [[], [], []];
 
 //Greet User
-prompt("Welcome to Tic Tac Toe!");
+prompt('Welcome to Tic Tac Toe!');
 
 let playAgain = true;
 
 //Create loop for Game
 while (playAgain) {
-
   //Establish variables for gameplay
-  let player = "x";
+  let player = 'x';
   let gameOver = false;
   let movesRemaining = true;
   let isWinner = false;
@@ -30,7 +29,6 @@ while (playAgain) {
 
   //Create loop for each Player's Move
   while (!gameOver) {
-
     //Display index for spaces
     printMoveOptions();
 
@@ -42,7 +40,9 @@ while (playAgain) {
       prompt(`${player}'s turn. Select where you would like to move.`);
       currentMove = readline.question();
       validMove = checkIfValidMove(currentMove);
-      if (validMove) { break; }
+      if (validMove) {
+        break;
+      }
     }
 
     //Add move to board
@@ -60,13 +60,9 @@ while (playAgain) {
 
     //End game if Winner or if no Remining Moves
     if (isWinner || !movesRemaining) {
-      prompt('Game Over.')
+      prompt('Game Over.');
       gameOver = true;
-      prompt("Would you like to play again? (y/n)")
-       
+      prompt('Would you like to play again? (y/n)');
     }
-
-
   }
 }
-

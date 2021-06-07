@@ -31,3 +31,5 @@ function checkIfValidMove(move, BOARD) {
     return true;
   }
 }
+
+export { printMoveOptions, printCurrentBoard, prompt, checkIfValidMove }
